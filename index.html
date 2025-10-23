@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Household Budget Organizer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="header-top">
+        <h1><i class="fas fa-wallet"></i> Household Budget Organizer</h1>
+        <button id="themeToggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+      <p class="subtitle">Set your total income and distribute it across categories to manage your finances effectively</p>
+    </header>
+
+    <div class="budget-input">
+      <label for="totalBudget">Monthly Budget ($)</label>
+      <input type="number" id="totalBudget" placeholder="Enter your income">
+      <button class="reset-btn" id="resetBudget"><i class="fas fa-redo"></i> Reset Budget</button>
+    </div>
+
+    
+    <div class="summary" id="summaryBox">
+      <h2>Budget Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <h3>Total Spent</h3>
+          <p>$<span id="summarySpent">0</span></p>
+        </div>
+        <div class="summary-item">
+          <h3>Remaining</h3>
+          <p>$<span id="summaryRemaining">0</span></p>
+        </div>
+        <div class="summary-item">
+          <h3>Used</h3>
+          <p><span id="summaryPercent">0</span>%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning" id="warningMsg"></div>
+
+    
+    <div class="chart-container">
+      <h2>Budget Distribution</h2>
+      <div class="chart" id="budgetChart">
+        <canvas id="chartCanvas"></canvas>
+      </div>
+    </div>
+
+    <div class="container" id="budgetContainer"></div>
+
+    
+    <div class="modal-overlay" id="deleteModal">
+      <div class="modal">
+        <h3>Confirm Deletion</h3>
+        <p>Are you sure you want to delete this expense? This action cannot be undone.</p>
+        <div class="modal-buttons">
+          <button class="modal-btn cancel">Cancel</button>
+          <button class="modal-btn confirm">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="limitModal">
+      <div class="modal">
+        <h3>Limit Exceeded</h3>
+        <p id="limitModalMessage">You have exceeded the budget limit for this category.</p>
+        <div class="modal-buttons">
+          <button class="modal-btn confirm">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Household Budget Organizer &copy; 2025 - Designed for Wenner Nunes</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
