@@ -12,7 +12,7 @@
     <header>
       <div class="header-top">
         <h1><i class="fas fa-wallet"></i> Household Budget Organizer</h1>
-        <button id="themeToggle" class="theme-toggle">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark theme">
           <i class="fas fa-moon"></i>
         </button>
       </div>
@@ -56,6 +56,13 @@
 
     <div class="container" id="budgetContainer"></div>
 
+    <!-- Botão: Adicionar Categoria -->
+    <div style="display:flex; justify-content:center; margin: 16px 0;">
+      <button id="addCategoryBtn" class="add-category-btn">
+        <i class="fas fa-plus-circle"></i> Add Category
+      </button>
+    </div>
+
     
     <div class="modal-overlay" id="deleteModal">
       <div class="modal">
@@ -79,8 +86,48 @@
       </div>
     </div>
 
+    <!-- Modal: Nova Categoria -->
+    <div class="modal-overlay" id="addCategoryModal">
+      <div class="modal">
+        <h3>Add a new category</h3>
+        <div class="form-row">
+          <label for="catName">Name</label>
+          <input id="catName" type="text" placeholder="e.g., Groceries" />
+        </div>
+        <div class="form-row">
+          <label for="catIcon">Icon (Font Awesome class)</label>
+          <input id="catIcon" type="text" placeholder="e.g., fas fa-utensils" />
+          <small>Use any <strong>Font Awesome</strong> icon class, for example:<code>fas fa-car</code> 🚗 or <code>fas fa-basket-shopping</code> 🛒.<br>Browse available icons at 
+            <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">fontawesome.com/icons</a>.
+          </small>
+
+        </div>
+        <div class="form-row">
+          <label for="catColor">Accent color</label>
+          <input id="catColor" type="color" value="#4caf50" />
+        </div>
+
+        <div class="modal-buttons" style="margin-top:12px">
+          <button class="modal-btn cancel" id="cancelAddCategory">Cancel</button>
+          <button class="modal-btn confirm" id="confirmAddCategory">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Delete category -->
+    <div class="modal-overlay" id="deleteCategoryModal">
+      <div class="modal">
+        <h3>Delete category</h3>
+        <p id="deleteCategoryMessage">Delete this category? This action cannot be undone.</p>
+        <div class="modal-buttons">
+          <button class="modal-btn cancel" id="cancelDeleteCategory">Cancel</button>
+          <button class="modal-btn confirm" id="confirmDeleteCategory">Delete</button>
+        </div>
+      </div>
+    </div>
+
     <footer>
-      <p>Household Budget Organizer &copy; 2025 - Designed for Wenner Nunes</p>
+      <p>Household Budget Organizer &copy; 2026 - Designed for Wenner Nunes</p>
     </footer>
   </div>
 
