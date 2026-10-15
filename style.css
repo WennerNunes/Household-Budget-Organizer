@@ -284,7 +284,7 @@ h1 {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   margin-top: 20px;
 }
@@ -675,6 +675,72 @@ footer {
   padding: 20px;
   color: var(--gray);
   font-size: 0.9rem;
+}
+
+/* === Add-on: Custom Categories button & modal fields === */
+.add-category-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(67,97,238,0.2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.add-category-btn:hover { background: var(--secondary); transform: translateY(-1px); }
+
+/* Campos do modal novo (reaproveitando .modal) */
+#addCategoryModal .form-row {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+#addCategoryModal label { font-weight: 600; }
+#addCategoryModal input[type="text"],
+#addCategoryModal input[type="color"] {
+  padding: 10px 12px;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+#addCategoryModal small { color: var(--gray); }
+
+/* Responsive columns for container */
+@media (max-width: 1100px) {
+  .container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .container { grid-template-columns: 1fr; }
+}
+
+/* Custom category accent color (set from JavaScript as --accent) */
+.card-custom h2:after { background: var(--accent, #4caf50); }
+
+/* Delete button on custom category cards */
+.delete-category-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--gray);
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--transition);
+}
+.delete-category-btn:hover {
+  background: rgba(230, 57, 70, 0.12);
+  color: var(--danger);
+}
+.delete-category-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* Dark theme fixes: readable hover on expenses and cancel buttons */
