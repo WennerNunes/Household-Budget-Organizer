@@ -23,6 +23,7 @@
   --input-text: #212529;
   --input-bg: white;
   --summary-bg: #f8f9fa;
+  --heading-color: var(--secondary);
 }
 
 [data-theme="dark"] {
@@ -39,6 +40,7 @@
   --input-text: #ffffff; 
   --input-bg: #2d2d2d; 
   --summary-bg: #242424; 
+  --heading-color: #b8a4ff;
 }
 
 * {
@@ -103,7 +105,7 @@ header {
 
 h1 {
   font-size: 2.5rem;
-  color: var(--secondary);
+  color: var(--heading-color);
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -193,7 +195,7 @@ h1 {
 .summary h2 {
   margin: 0 0 20px;
   font-size: 1.5rem;
-  color: var(--secondary);
+  color: var(--heading-color);
   position: relative;
   padding-bottom: 10px;
 }
@@ -271,7 +273,7 @@ h1 {
 .chart-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: var(--secondary);
+  color: var(--heading-color);
 }
 
 .chart {
@@ -305,7 +307,7 @@ h1 {
 .card h2 {
   margin: 0 0 20px;
   font-size: 1.4rem;
-  color: var(--secondary);
+  color: var(--heading-color);
   position: relative;
   padding-bottom: 12px;
   display: flex;
@@ -673,4 +675,18 @@ footer {
   padding: 20px;
   color: var(--gray);
   font-size: 0.9rem;
+}
+
+/* Dark theme fixes: readable hover on expenses and cancel buttons */
+[data-theme="dark"] ul li:hover {
+  background: #2a2a2a;
+}
+
+[data-theme="dark"] .modal-btn.cancel,
+[data-theme="dark"] .edit-form-btn.cancel {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .modal-btn.cancel:hover {
+  background: #3a3a3a;
 }
