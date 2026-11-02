@@ -249,6 +249,10 @@ h1 {
   color: var(--warning);
 }
 
+.warning:empty {
+  display: none;
+}
+
 .warning {
   text-align: center;
   font-weight: 600;
@@ -691,7 +695,7 @@ footer {
 }
 .add-category-btn:hover { background: var(--secondary); transform: translateY(-1px); }
 
-/* Campos do modal novo (reaproveitando .modal) */
+/* New category modal fields (reusing .modal) */
 #addCategoryModal .form-row {
   display: grid;
   gap: 6px;

@@ -2,12 +2,12 @@
 // One card factory is used for both the default and the custom categories.
 
 const defaultCategories = [
-  { name: "Financial Freedom", icon: "fas fa-chart-line", class: "card-financial" },
-  { name: "Fixed Costs",       icon: "fas fa-home",       class: "card-fixed" },
-  { name: "Pleasures",         icon: "fas fa-smile",      class: "card-pleasures" },
-  { name: "Goals",             icon: "fas fa-bullseye",   class: "card-goals" },
-  { name: "Education",         icon: "fas fa-graduation-cap", class: "card-education" },
-  { name: "Comfort",           icon: "fas fa-couch",      class: "card-comfort" }
+  { name: "Financial Freedom", icon: "fas fa-chart-line",     class: "card-financial", target: 20 },
+  { name: "Fixed Costs",       icon: "fas fa-home",           class: "card-fixed",     target: 35 },
+  { name: "Pleasures",         icon: "fas fa-smile",          class: "card-pleasures", target: 10 },
+  { name: "Goals",             icon: "fas fa-bullseye",       class: "card-goals",     target: 15 },
+  { name: "Education",         icon: "fas fa-graduation-cap", class: "card-education", target: 10 },
+  { name: "Comfort",           icon: "fas fa-couch",          class: "card-comfort",   target: 10 }
 ];
 
 const STORAGE_KEY = 'budgetData';
@@ -118,7 +118,7 @@ function createCard(cat, { initialData = null, custom = false } = {}) {
     card.classList.add(cat.class);
   }
 
-  const defaultTarget = custom ? 10 : Math.round(100 / defaultCategories.length);
+  const defaultTarget = custom ? 10 : (cat.target ?? Math.round(100 / defaultCategories.length));
   const target = Number.isFinite(initialData?.targetPercentage)
     ? initialData.targetPercentage
     : defaultTarget;
