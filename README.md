@@ -38,35 +38,44 @@ Enter your monthly income, give each category a percentage target, and the app c
 5. Use **Add Category** to create your own categories, and the **X** on a custom card to remove it.
 6. Switch between light and dark mode anytime.
 
-## 🧩 Run Locally
+## 🧩 Installation & Setup
 
-```bash
-git clone https://github.com/WennerNunes/Household-Budget-Organizer.git
-cd Household-Budget-Organizer
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/WennerNunes/Household-Budget-Organizer.git
+   ```
+2. **Navigate into the project folder**
+   ```bash
+   cd Household-Budget-Organizer
+   ```
+3. **Open the project:** open `index.html` in your browser, or right-click it and choose **"Open with Live Server"** in VS Code.
 
-Open `index.html` in your browser (or use "Open with Live Server" in VS Code).
+💡 No frameworks or installations required, everything runs directly in your browser.
 
-No installation needed. An internet connection is required because Chart.js and Font Awesome are loaded from a CDN.
+---
 
 ## 🧱 Project Structure
 
-```text
-/
-├── index.html   # Page structure and modals
-├── style.css    # Styles, themes and responsive layout
-└── script.js    # App logic, LocalStorage and chart
 ```
+/
+├── index.html   # Main HTML structure
+├── style.css    # Styling and responsive design
+└── script.js    # App logic and Chart.js integration
+```
+
+---
 
 ## 📈 Learning Outcomes
 
+This project enhanced my understanding of:
+
 - DOM manipulation and dynamic rendering
 - Data visualization with Chart.js
-- Persisting state with LocalStorage
-- Light and dark themes with CSS variables
-- Refactoring duplicated code into a single card factory
-- Escaping user input before rendering it as HTML
-- Finding and fixing a bug where saved expenses did not show after a reload
+- Front-end architecture and UI/UX design
+- LocalStorage for persistent state
+- Dark/light themes with CSS variables
+
+---
 
 ## 🧑‍💻 About the Developer
 
