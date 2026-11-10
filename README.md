@@ -2,6 +2,8 @@
 
 A web-based personal finance tool to plan a monthly budget, split it across categories, track expenses and see where the money goes in interactive charts.
 
+🔗 **Live demo:** [household-budget-wenner.netlify.app](https://household-budget-wenner.netlify.app/)
+
 ## 💡 Overview
 
 Enter your monthly income, give each category a percentage target, and the app calculates the spending limit for every category. Add expenses, follow the progress bars and compare spending with limits in a chart. Your data stays in your browser.
